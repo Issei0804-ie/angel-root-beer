@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         react(), // <- 追記
         laravel({
-            input: 'resources/js/app.jsx', // <- inputを修正
+            input: 'resources/js/app.tsx', // <- inputを修正
             refresh: true,
         }),
     ],
