@@ -14,6 +14,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@inertiajs/react": "^1.0.6"
+        "@inertiajs/react": "^1.0.6",
+        "react-toastify": "^9.1.3"
     }
 }
