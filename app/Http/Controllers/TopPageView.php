@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,6 +13,6 @@ class TopPageView extends Controller
      */
     public function __invoke(Request $request): \Inertia\Response
     {
-        return Inertia::render('Welcome', ['files' => ['file1', 'file2']]);
+        return Inertia::render('Welcome', ['files' => File::all()]);
     }
 }

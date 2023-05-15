@@ -3,7 +3,13 @@ import FileUploadForm from "../Components/FileUploadForm";
 import FileList from "../Components/FileList";
 
 interface WelcomeProps {
-    files: string[];
+    files: FileInterface[];
+}
+
+export interface FileInterface {
+    id: number;
+    file_name: string;
+    file_path: string;
 }
 
 const Welcome:React.FC<WelcomeProps> = (props) =>{
@@ -19,3 +25,4 @@ const Welcome:React.FC<WelcomeProps> = (props) =>{
 }
 
 export default Welcome;
+
