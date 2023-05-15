@@ -12,6 +12,6 @@ class TopPageView extends Controller
      */
     public function __invoke(Request $request): \Inertia\Response
     {
-        return Inertia::render('Welcome');
+        return Inertia::render('Welcome', ['files' => ['file1', 'file2']]);
     }
 }

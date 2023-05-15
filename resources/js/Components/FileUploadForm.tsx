@@ -6,9 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const FileUploadForm = () => {
     const file = useRef(null);
 
+    // @ts-ignore
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData();
+        // @ts-ignore
         formData.append('file', file.current.files[0]);
         Inertia.post('/', formData, {
             onSuccess: (page) => {
