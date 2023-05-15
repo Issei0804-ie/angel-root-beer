@@ -19,11 +19,11 @@ class FileFactory extends Factory
      */
     public function definition(): array
     {
-        $file_name = $this->faker->word;
-        $file_path = $this->faker->word;
+        $file_path = $this->faker->word . ".md";
+        $file_name = basename($file_path);
         $count = 0;
         while (Storage::exists($file_path)) {
-            $file_path = $this->faker->word;
+            $file_path = $this->faker->word . ".md";
             $count++;
             if ($count > 10) {
                 // throw error
