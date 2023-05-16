@@ -9,15 +9,14 @@ interface FileUploadFormProps {
 const FileList:React.FC<FileUploadFormProps> = ({ files }) => {
     return (
         <div>
-            <p>{files[0].file_path}</p>
             {files.map((file) => (
-                <div key={file.id}>
-                    {file.file_name}
-                </div>
+                <a key={file.id} href={file.file_path}>
+                    <div>
+                        <span>File:</span>
+                        <span>{file.file_name}</span>
+                    </div>
+                </a>
             ))}
-            <button onClick={()=>{
-                console.log(files);
-            }}>adsasdad</button>
         </div>
     )
 }
