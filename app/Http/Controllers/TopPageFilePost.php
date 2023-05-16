@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TopPageFileRequest;
+use App\Models\File;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
@@ -16,13 +17,13 @@ class TopPageFilePost extends Controller
         $validatedData = $request->validated();
         $uploadedFile = $validatedData['file'];
         if (is_null($uploadedFile)){
-            return Inertia::render('Welcome', ['message' => 'File not uploaded']);
+            return Inertia::render('Welcome', ['message' => 'File not uploaded', 'files' => File::all()]);
         }
         $filename = $uploadedFile->getClientOriginalName();
         if (Storage::exists($filename)){
-            return Inertia::render('Welcome', ['message' => 'File already exists']);
+            return Inertia::render('Welcome', ['message' => 'File already exists', 'files' => File::all()]);
         }
         Storage::put($filename, $uploadedFile->get());
-        return Inertia::render('Welcome', ['message' => 'File uploaded']);
+        return Inertia::render('Welcome', ['message' => 'File uploaded', 'files' => File::all()]);
     }
 }
