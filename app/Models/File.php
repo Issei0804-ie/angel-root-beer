@@ -17,6 +17,12 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     use HasFactory;
+
     protected $fillable = ['file_name', 'file_path'];
     protected $guarded = ['id'];
+
+    public function extractedTexts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ExtractedText::class);
+    }
 }
