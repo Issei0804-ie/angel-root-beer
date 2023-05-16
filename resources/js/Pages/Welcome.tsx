@@ -1,6 +1,7 @@
 import React from "react";
 import FileUploadForm from "../Components/FileUploadForm";
 import FileList from "../Components/FileList";
+import SearchBox from "../Components/SearchBox";
 
 interface WelcomeProps {
     files: FileInterface[];
@@ -17,8 +18,9 @@ const Welcome:React.FC<WelcomeProps> = (props) =>{
 
     return (
         <div>
-            <FileUploadForm/>
+            <SearchBox searchQuery={"aa"}/>
             <FileList files={props.files}/>
+            <FileUploadForm/>
         </div>
     )
 
