@@ -18,6 +18,7 @@ const FileUploadForm = () => {
                 if (page.props.message){
                     console.log(page.props.message);
                 }
+                notifyUploadSuccessful();
             },
             onError: (errors) => {
                 console.log("error");
@@ -26,7 +27,7 @@ const FileUploadForm = () => {
         });
     }
 
-    const notify = () => toast.info("Wow so easy!");
+    const notifyUploadSuccessful = () => toast.success("アップロードに成功しました!!");
 
     return (
         <div>
@@ -35,7 +36,6 @@ const FileUploadForm = () => {
                 <input type="submit" onClick={handleSubmit}/>
             </div>
             <div>
-                <button onClick={notify}>sasa</button>
                 <ToastContainer
                     position="top-center"
                     autoClose={5000}
