@@ -16,11 +16,11 @@ class TopPageFilePost extends Controller
     {
         $validatedData = $request->validated();
         $uploadedFile = $validatedData['file'];
-        if (is_null($uploadedFile)){
+        if (is_null($uploadedFile)) {
             return Inertia::render('Welcome', ['message' => 'File not uploaded', 'files' => File::all()]);
         }
         $filename = $uploadedFile->getClientOriginalName();
-        if (Storage::exists($filename)){
+        if (Storage::exists($filename)) {
             return Inertia::render('Welcome', ['message' => 'File already exists', 'files' => File::all()]);
         }
         Storage::put($filename, $uploadedFile->get());

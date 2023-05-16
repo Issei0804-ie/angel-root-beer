@@ -18,5 +18,4 @@ class TopPageFileRequest extends FormRequest
             'file' => ['required', 'file', 'mimes:png'],
         ];
     }
-
 }
