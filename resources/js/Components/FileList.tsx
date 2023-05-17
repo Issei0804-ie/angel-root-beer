@@ -10,12 +10,12 @@ const FileList:React.FC<FileUploadFormProps> = ({ files }) => {
     return (
         <div>
             {files.map((file) => (
-                <a key={file.id} href={file.file_path}>
-                    <div>
+                <div key={file.id}>
+                    <a href={file.file_path}>
                         <span>File:</span>
                         <span>{file.file_name}</span>
-                    </div>
-                </a>
+                    </a>
+                </div>
             ))}
         </div>
     )

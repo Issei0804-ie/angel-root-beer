@@ -5,6 +5,7 @@ import SearchBox from "../Components/SearchBox";
 
 interface WelcomeProps {
     files: FileInterface[];
+    searchQuery: string;
 }
 
 export interface FileInterface {
@@ -18,7 +19,7 @@ const Welcome:React.FC<WelcomeProps> = (props) =>{
 
     return (
         <div>
-            <SearchBox searchQuery={"aa"}/>
+            <SearchBox searchQuery={props.searchQuery} />
             <FileList files={props.files}/>
             <FileUploadForm/>
         </div>
